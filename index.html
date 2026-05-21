@@ -589,17 +589,30 @@
   /* ── Vídeo impressora — plano de fundo lateral DIREITO ── */
   .printer-video-bg {
     position: fixed;
-    top: 0;
+    top: 2vh;
     right: calc(50% - 360px);
     width: 180px;
-    height: 100vh;
+    height: 98vh;
     pointer-events: none;
     z-index: 0;
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: flex-end;
-    padding-bottom: 40px;
+    justify-content: flex-start;
+    padding-top: 0;
+  }
+
+  .printer-top-label {
+    font-family: 'Orbitron', sans-serif;
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 4px;
+    color: #F5C842;
+    opacity: 0.18;
+    margin-bottom: 4px;
+    text-transform: uppercase;
+    user-select: none;
+    white-space: nowrap;
   }
 
   .printer-video-bg video {
@@ -651,6 +664,7 @@
 </div>
 
 <div class="printer-video-bg" aria-hidden="true">
+  <span class="printer-top-label">3D Print</span>
   <video src="IMPRESSORA.mp4" autoplay muted loop playsinline></video>
   <span class="printer-label">Criando Arte</span>
 </div>
