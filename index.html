@@ -532,11 +532,11 @@
     * { animation-duration: 0.01ms !important; animation-delay: 0.01ms !important; }
   }
 
-  /* ── Vídeo robô — plano de fundo lateral DIREITO ── */
+  /* ── Vídeo robô — plano de fundo lateral ESQUERDO ── */
   .robot-video-bg {
     position: fixed;
     top: 0;
-    right: calc(50% - 360px);
+    left: calc(50% - 360px);
     width: 180px;
     height: 100vh;
     pointer-events: none;
@@ -545,13 +545,27 @@
     flex-direction: column;
     align-items: center;
     justify-content: flex-start;
-    padding-top: 12px;
+    padding-top: 0px;
+  }
+
+  .robot-top-label {
+    font-family: 'Orbitron', sans-serif;
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 4px;
+    color: #F5C842;
+    opacity: 0.18;
+    margin-bottom: 4px;
+    margin-top: 14px;
+    text-transform: uppercase;
+    user-select: none;
+    white-space: nowrap;
   }
 
   .robot-video-bg video {
     width: 100%;
     height: auto;
-    max-height: 92vh;
+    max-height: 88vh;
     object-fit: contain;
     opacity: 0.18;
     mix-blend-mode: screen;
@@ -572,11 +586,11 @@
     white-space: nowrap;
   }
 
-  /* ── Vídeo impressora — plano de fundo lateral ESQUERDO ── */
+  /* ── Vídeo impressora — plano de fundo lateral DIREITO ── */
   .printer-video-bg {
     position: fixed;
     top: 0;
-    left: calc(50% - 360px);
+    right: calc(50% - 360px);
     width: 180px;
     height: 100vh;
     pointer-events: none;
@@ -584,14 +598,14 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: flex-start;
-    padding-top: 12px;
+    justify-content: flex-end;
+    padding-bottom: 40px;
   }
 
   .printer-video-bg video {
     width: 100%;
     height: auto;
-    max-height: 92vh;
+    max-height: 70vh;
     object-fit: contain;
     opacity: 0.18;
     mix-blend-mode: screen;
@@ -606,7 +620,7 @@
     letter-spacing: 4px;
     color: #F5C842;
     opacity: 0.18;
-    margin-top: -2px;
+    margin-top: 6px;
     text-transform: uppercase;
     user-select: none;
     white-space: nowrap;
@@ -614,32 +628,31 @@
 
   @media (max-width: 760px) {
     .robot-video-bg {
-      right: -30px;
-      width: 130px;
-      padding-top: 8px;
+      left: calc(50% - 260px);
+      width: 120px;
     }
     .printer-video-bg {
-      left: -30px;
-      width: 130px;
-      padding-top: 8px;
+      right: calc(50% - 260px);
+      width: 120px;
     }
-    .robot-label, .printer-label {
-      font-size: 10px;
-      letter-spacing: 3px;
+    .robot-label, .printer-label, .robot-top-label {
+      font-size: 9px;
+      letter-spacing: 2px;
     }
   }
 </style>
 </head>
 <body>
 
-<div class="printer-video-bg" aria-hidden="true">
-  <video src="IMPRESSORA.mp4" autoplay muted loop playsinline></video>
-  <span class="printer-label">3D Print</span>
-</div>
-
 <div class="robot-video-bg" aria-hidden="true">
+  <span class="robot-top-label">Nosso Figure</span>
   <video src="RK01BOM.mp4" autoplay muted loop playsinline></video>
   <span class="robot-label">RK01</span>
+</div>
+
+<div class="printer-video-bg" aria-hidden="true">
+  <video src="IMPRESSORA.mp4" autoplay muted loop playsinline></video>
+  <span class="printer-label">Criando Arte</span>
 </div>
 
 <div class="particles" aria-hidden="true">
