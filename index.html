@@ -589,10 +589,10 @@
   /* ── Vídeo impressora — plano de fundo lateral DIREITO ── */
   .printer-video-bg {
     position: fixed;
-    top: 12vh;
+    top: 8vh;
     right: calc(50% - 360px);
     width: 180px;
-    height: 88vh;
+    height: 92vh;
     pointer-events: none;
     z-index: 0;
     display: flex;
@@ -652,6 +652,12 @@
       font-size: 9px;
       letter-spacing: 2px;
     }
+  }
+
+  /* Mercado Livre e Shopee temporariamente ocultos */
+  a[href*="shopee.com"],
+  a[href*="mercadolivre.com"] {
+    display: none !important;
   }
 </style>
 </head>
